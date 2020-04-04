@@ -22,4 +22,12 @@ public function __construct()
 		$data=$this->db->limit(1)->get_where('bidang',array('bidang_kode'=>$kode))->row()->bidang_gambar;
 		echo json_encode($data);
 	}
+
+	public function detail ($kode=null)
+	{
+		$data['kode']=$kode;
+		$data['bidang']=$this->db->get_where('bidang',array('bidang_kode'=>$kode))->result();
+		$data['dok']=$this->db->get_where('dokumentasi', array('dokumentasi_bidang_id'=>$kode))->result();
+		$this->load->view('v_detail',$data);
+	}
 }

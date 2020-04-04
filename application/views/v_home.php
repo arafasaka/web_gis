@@ -136,10 +136,12 @@ $.getJSON(base_url+"assets/geojson/map.geojson", function(data){
             },
             onEachFeature: function(feature, layer){
               var kode = feature.properties.kode;
-
-              var info_bidang="<h5 style='text-align:center'>INFO BIDANG</h5>";
-                  info_bidang+="<a href='<?=base_url()?>home/bidang_detail/"+kode+"'><img src='https://0.academia-photos.com/21599039/12641658/14062867/s200_nareswari.dyah_puspaningrum.jpg' alt='maptime logo gif' height'180px' width='230px'/></a>";
-                  info_bidang+="<div style='width:100%;text-align:center;margin-top:10px;'><a href='<?=base_url()?>home/bidang_detail/"+kode+"'> DETAIL</a></div";
+              
+              $.getJSON(base_url+"index.php/home/foto/"+kode, function(data){
+                  
+                var info_bidang="<h5 style='text-align:center'>INFO BIDANG</h5>";
+                  info_bidang+="<a href='<?=base_url()?>index.php/home/detail/"+kode+"'><img src='<?=base_url()?>assets/uploads/"+data+"' alt='maptime logo gif' height'180px' width='230px'/></a>";
+                  info_bidang+="<div style='width:100%;text-align:center;margin-top:10px;'><a href='<?=base_url()?>index.php/home/detail/"+kode+"'> DETAIL</a></div";
               
               
                   layer.bindPopup(info_bidang,{
@@ -150,6 +152,8 @@ $.getJSON(base_url+"assets/geojson/map.geojson", function(data){
                   layer.on('click', function(){
                     layer.openPopup();
                   });
+              });
+              
 
             }
 
