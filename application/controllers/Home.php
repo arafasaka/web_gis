@@ -17,4 +17,9 @@ public function __construct()
 		$data=$this->db->get('bangunan')->result();
 		echo json_encode($data);
 	}
+	public function foto($kode=null)
+	{
+		$data=$this->db->limit(1)->get_where('bidang',array('bidang_kode'=>$kode))->row()->bidang_gambar;
+		echo json_encode($data);
+	}
 }

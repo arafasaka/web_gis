@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     padding:5px;
     margin-bottom: 5px;
   }
-  #mapid { height: 480px; }
+  #mapid { height: 560px; }
 
 </style>
 </head>
@@ -104,6 +104,58 @@ function groupClick(event){
   alert("Clicked on marker"+event.layer.id);
 }
 
+
+$.getJSON(base_url+"assets/geojson/map.geojson", function(data){
+  geoLayer = L.geoJson(data, {
+            style: function(feature){
+
+              var kategori = (feature.properties.kategori);
+              if(kategori==1){
+                return{
+                fillOpacity: 0.8,
+                weight: 1,
+                opacity: 1,
+                color:"#008cff"
+
+              };
+              }else if (kategori==2){
+                return{
+                fillOpacity: 0.8,
+                weight: 1,
+                opacity: 1,
+                color:"#e88243"
+              };
+              }else{
+                return{
+                fillOpacity: 0.8,
+                weight: 1,
+                opacity: 1,
+                color:"#f44242"
+              };
+              }
+            },
+            onEachFeature: function(feature, layer){
+              var kode = feature.properties.kode;
+
+              var info_bidang="<h5 style='text-align:center'>INFO BIDANG</h5>";
+                  info_bidang+="<a href='<?=base_url()?>home/bidang_detail/"+kode+"'><img src='https://0.academia-photos.com/21599039/12641658/14062867/s200_nareswari.dyah_puspaningrum.jpg' alt='maptime logo gif' height'180px' width='230px'/></a>";
+                  info_bidang+="<div style='width:100%;text-align:center;margin-top:10px;'><a href='<?=base_url()?>home/bidang_detail/"+kode+"'> DETAIL</a></div";
+              
+              
+                  layer.bindPopup(info_bidang,{
+                    maxWidth : 260,
+                    closeButton: true,
+                    offset: L.point(0, -20)
+                  });
+                  layer.on('click', function(){
+                    layer.openPopup();
+                  });
+
+            }
+
+  }).addTo(map);
+
+});
   </script>
 
 </body>
