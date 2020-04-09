@@ -12,6 +12,10 @@ public function __construct()
 	{
 		$this->load->view('v_home');
 	}
+	public function tabel()
+	{
+		$this->load->view('v_tabel');
+	}
 	public function bangunan_json()
 	{
 		$data=$this->db->get('bangunan')->result();
@@ -30,4 +34,5 @@ public function __construct()
 		$data['dok']=$this->db->get_where('dokumentasi', array('dokumentasi_bidang_id'=>$kode))->result();
 		$this->load->view('v_detail',$data);
 	}
+	
 }
