@@ -95,7 +95,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="form-group">
         	<input type="text" class="form-control" name="bangunan_nama" value="<?php echo $b->bangunan_nama ?>" placeholder="Nama Bangunan" required="required">
-        </div>
+        </div> 
 		<div class="form-group">
             <input type="text" class="form-control" name="bangunan_lat" value="<?php echo $b->bangunan_lat ?>" placeholder="Latitude" required="required">
         </div>

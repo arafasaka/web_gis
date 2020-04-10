@@ -228,8 +228,9 @@ $(document).ready(function(){
                     </div>
                 </div>
             </div>
-            <center>
-            <button class="btn btn-primary btn-md" onclick="location.href='<?php echo base_url();?>index.php/crud/tambah'">TAMBAH DATA BARU</button></center><br>
+            
+            <button class="btn btn-primary btn-md" onclick="location.href='<?php echo base_url();?>index.php/crud/tambah'">TAMBAH DATA BARU</button>
+            <a class="btn btn-danger" href="<?php echo base_url('index.php/crud/print') ?>"> <i class="fa fa-print"></i> Print </a>
             <div class="form-group">
             <table class="table table-bordered">
                 <thead>

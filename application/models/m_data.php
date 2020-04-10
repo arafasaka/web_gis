@@ -1,9 +1,9 @@
 <?php 
 
 class m_data extends CI_Model{
-	function tampil_data($tabel){
-		return $this->db->get($tabel);
-	}
+	// function tampil_data($tabel){
+	// 	return $this->db->get($tabel);
+	// }
 
 	function input_data($data,$table){
 		$this->db->insert($table,$data);

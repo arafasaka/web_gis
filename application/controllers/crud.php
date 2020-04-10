@@ -15,6 +15,11 @@ class Crud extends CI_Controller{
 		// $data['data'] = $this->m_data->tampil_data('bangunan')->result();
 		// $this->load->view('v_tabel',$data);
 	}
+	function print(){
+		$this->data['datas']=$this->m_data->showData();
+		$this->load->view('v_print_tabel1',$this->data);
+	}
+
 	function tambah(){
 		$this->load->view('v_input');
 	}

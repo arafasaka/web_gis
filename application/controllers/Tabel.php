@@ -10,9 +10,13 @@ public function __construct()
 		$this->load->helper('url');
 	}
 
-	public function index()
-	{
-		$data['data'] = $this->m_data->tampil_data('bangunan')->result();
-		$this->load->view('v_tabel',$data);
-    }
+	// public function index()
+	// {
+	// 	$data['data'] = $this->m_data->tampil_data('bangunan')->result();
+	// 	$this->load->view('v_tabel',$data);
+	}
+	// public function print(){
+	// 	$data['data'] = $this->m_data->showData()->result();
+	// 	$this->load->view('print_tabel1',$data);
+	// }
 }
