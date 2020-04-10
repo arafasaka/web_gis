@@ -191,8 +191,10 @@ $(document).ready(function(){
   <div id = "test">
     <h2>LOGO</h2>
     <div class = "list-group">
-    <a   href  = "<?=base_url()?>index.php/home/index" class = "list-group-item active">MENU 1</a>
-    <a   href  = "#" class = "list-group-item">MENU 2</a>
+    <a   href  = "<?=base_url()?>index.php/home/index" class = "list-group-item active">PETA</a>
+    <a   href  = "#" class = "list-group-item">BANGUNAN</a>
+    <a   href  = "<?=base_url()?>index.php/bidang/index" class = "list-group-item">BIDANG</a>
+    <a   href  = "<?=base_url()?>index.php/dokumentasi/index" class = "list-group-item">BIDANG</a>
     </div>
 
   </div>
@@ -216,7 +218,7 @@ $(document).ready(function(){
                     <div class="col-sm-4">					
 					</div>
 					<div class="col-sm-4">
-						<h2 class="text-center">DATA PETA</h2>
+						<h2 class="text-center">DATA BANGUNAN PETA</h2>
 					</div>
                     <div class="col-sm-4">
                         <div class="search-box">
@@ -229,8 +231,9 @@ $(document).ready(function(){
                 </div>
             </div>
             
-            <button class="btn btn-primary btn-md" onclick="location.href='<?php echo base_url();?>index.php/crud/tambah'">TAMBAH DATA BARU</button>
-            <a class="btn btn-danger" href="<?php echo base_url('index.php/crud/print') ?>"> <i class="fa fa-print"></i> Print </a>
+            <button class="btn btn-primary btn-md" onclick="location.href='<?php echo base_url();?>index.php/crud/tambah'">TAMBAH DATA</button>
+            <a class="btn btn-danger" href="<?php echo base_url('index.php/crud/print') ?>"> <i class="fa fa-print"></i> EXPORT</a>
+            <!-- <a class="btn btn-warning" href="<?php echo base_url('index.php/crud/excel') ?>"> <i class="fa fa-print"></i> Export EXCEL </a>   -->
             <div class="form-group">
             <table class="table table-bordered">
                 <thead>

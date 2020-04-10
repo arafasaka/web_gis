@@ -135,7 +135,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-$.getJSON(base_url+"assets/geojson/map.geojson", function(data){
+$.getJSON(base_url+"assets/geojson/map8.geojson", function(data){
   geoLayer = L.geoJson(data, {
             style: function(feature){
 

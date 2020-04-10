@@ -19,6 +19,48 @@ class Crud extends CI_Controller{
 		$this->data['datas']=$this->m_data->showData();
 		$this->load->view('v_print_tabel1',$this->data);
 	}
+	/* public function excel(){
+		$this->data['datas']=$this->m_data->showData();
+		
+		require(APPPATH. 'PHPExcel-1.8/Classes/PHPExcel.php');
+		require(APPPATH. 'PHPExcel-1.8/Classes/PHPExcel/Writer/Excel2007.php');
+
+		$object = new PHPExcel();
+		$object->getProperties()->setCreator("Ara Fasaka");
+		$object->getProperties()->setLastModified("Ara Fasaka");
+		$object->getProperties()->setTitle("Daftar Bangunan");
+
+		$object->setActiveSheetIndex(0);
+
+		$object->getActiveSheet()->setCellValue('A1','ID');
+		$object->getActiveSheet()->setCellValue('B1','NAMA BANGUNA');
+		$object->getActiveSheet()->setCellValue('C1','LATITUDE');
+		$object->getActiveSheet()->setCellValue('D1','LONGITUDE');
+
+		$baris = 2;
+		$no = 1;
+
+		foreach ($data['bangunan'] as $b) {
+		$object->getActiveSheet()->setCellValue('A' .$baris, $no++);
+		$object->getActiveSheet()->setCellValue('B' .$baris, $b->bangunan_nama);
+		$object->getActiveSheet()->setCellValue('C' .$baris, $b->bangunan_lat);
+		$object->getActiveSheet()->setCellValue('D' .$baris, $b->bangunan_long);
+
+		$baris++;
+		}
+
+		$filename="Data_Bangunan".'xlsx';
+		$object->getActiveSheet()->setTitle("Data Bangunan");
+		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+		header('Content-Disposition: attachment;filename="'.$filename. '"');
+		header('Cache-Control: max-age=0');
+
+		$writer=PHPExcel_IOFactory::createwriter($object, 'Excel2007');
+		$writer->save('php://output');
+		exit;
+
+
+	} */
 
 	function tambah(){
 		$this->load->view('v_input');

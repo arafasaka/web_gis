@@ -12,7 +12,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <link href = "https://www.jqueryscript.net/css/jquerysctipttop.css" rel = "stylesheet" type = "text/css">
   <!-- Bootstrap -->
 <link rel = "stylesheet" href = "https://netdna.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-
   <link href = "<?=base_url()?>assets/css/BootSideMenu.css" rel = "stylesheet">
   <link href = "<?=base_url()?>assets/leaflet/leaflet.css" rel  = "stylesheet">
  
@@ -32,8 +31,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div id = "test">
     <h2>LOGO</h2>
     <div class = "list-group">
-    <a   href  = "#" class = "list-group-item active">MENU 1</a>
-    <a   href  = "<?=base_url()?>index.php/crud/index" class = "list-group-item">MENU 2</a>
+    <a   href  = "#" class = "list-group-item active">PETA</a>
+    <a   href  = "<?=base_url()?>index.php/crud/index" class = "list-group-item">BANGUNAN</a>
+    <a   href  = "<?=base_url()?>index.php/bidang/index" class = "list-group-item">BIDANG</a>
+    <a   href  = "<?=base_url()?>index.php/dokumentasi/index" class = "list-group-item">DOKUMENTASI</a>
     </div>
 
   </div>
@@ -120,7 +121,7 @@ function groupClick(event){
   //alert("Clicked on marker"+event.layer.id);
 }
 
-$.getJSON(base_url+"assets/geojson/.geojson", function(data){
+$.getJSON(base_url+"assets/geojson/map8.geojson", function(data){
   geoLayer = L.geoJson(data, {
             style: function(feature){
 
@@ -140,12 +141,87 @@ $.getJSON(base_url+"assets/geojson/.geojson", function(data){
                 opacity    : 1,
                 color      : "#e88243"
               };
-              }else{
+              }else if (kategori==3){
                 return{
                 fillOpacity: 0.8,
                 weight     : 1,
                 opacity    : 1,
-                color      : "#f44242"
+                color      : "#4ef542"
+              };
+              }else if (kategori==4){
+                return{
+                fillOpacity: 0.8,
+                weight     : 1,
+                opacity    : 1,
+                color      : "#f5f542"
+              };
+              }
+              else if (kategori==5){
+                return{
+                fillOpacity: 0.8,
+                weight     : 1,
+                opacity    : 1,
+                color      : "#42f5da"
+              };
+              }
+              else if (kategori==5){
+                return{
+                fillOpacity: 0.8,
+                weight     : 1,
+                opacity    : 1,
+                color      : "#8442f5"
+              };
+              }
+              else if (kategori==6){
+                return{
+                fillOpacity: 0.8,
+                weight     : 1,
+                opacity    : 1,
+                color      : "#f542e0"
+              };
+              }else if (kategori==7){
+                return{
+                fillOpacity: 0.8,
+                weight     : 1,
+                opacity    : 1,
+                color      : "#f5424e"
+              };
+              }
+              else if (kategori==8){
+                return{
+                fillOpacity: 0.8,
+                weight     : 1,
+                opacity    : 1,
+                color      : "#81948c"
+              };
+              }else if (kategori==9){
+                return{
+                fillOpacity: 0.8,
+                weight     : 1,
+                opacity    : 1,
+                color      : "#141f1a"
+              };
+              }else if (kategori==9){
+                return{
+                fillOpacity: 0.8,
+                weight     : 1,
+                opacity    : 1,
+                color      : "#ffffff"
+              };
+              }else if (kategori==10){
+                return{
+                fillOpacity: 0.8,
+                weight     : 1,
+                opacity    : 1,
+                color      : "#909647"
+              };
+              }
+              else{
+                return{
+                fillOpacity: 0.8,
+                weight     : 1,
+                opacity    : 1,
+                color      : "#c47e0c"
               };
               }
             },
