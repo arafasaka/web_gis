@@ -84,17 +84,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </style>
 </head>
 <body>
-    <?php foreach($bangunan as $b){ ?>
+<?php foreach($bangunan as $b){ ?>	
     <div class="signup-form">
-	<form action="<?php echo base_url(). 'index.php/crud/update'; ?>" method="POST">
+	<form action="<?php echo base_url(). 'index.php/crud/update'; ?>" method="post">
 		<h2>EDIT DATA BANGUNAN</h2>
 		<p>PASTIKAN DATA BENAR</p>
 		<hr>
         <div class="form-group">
-        	<input type="text" class="form-control" name="id" value="<?php echo $b->bangunan_id ?>" placeholder="" required="required">
+        	<input type="hidden" class="form-control" name="bangunan_id" value="<?php echo $b->bangunan_id ?>" placeholder="id bangunan" required="required">
         </div>
         <div class="form-group">
-        	<input type="text" class="form-control" name="nama" value="<?php echo $b->bangunan_nama ?>" placeholder="Nama Bangunan" required="required">
+        	<input type="text" class="form-control" name="bangunan_nama" value="<?php echo $b->bangunan_nama ?>" placeholder="Nama Bangunan" required="required">
         </div>
 		<div class="form-group">
             <input type="text" class="form-control" name="bangunan_lat" value="<?php echo $b->bangunan_lat ?>" placeholder="Latitude" required="required">
@@ -103,13 +103,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <input type="text" class="form-control" name="bangunan_long" value="<?php echo $b->bangunan_long ?>" placeholder="Longitude" required="required">
         </div>
 		<div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block btn-lg">PERBARUI</button>
+            <button type="submit" class="btn btn-primary btn-block btn-lg">MASUKAN DATA</button>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block btn-lg">BATAL</button>
+		<button class="btn btn-primary btn-block btn-lg" onclick="location.href='<?php echo base_url();?>index.php/crud/INDEX'">BATAL</button>
         </div>
     </form>
 	</div>
-    <?php } ?>
+   <?php } ?>
 </body>
 </html>

@@ -61,16 +61,32 @@ class Crud extends CI_Controller{
 		$bangunan_lat = $this->input->post('bangunan_lat');
 		$bangunan_long = $this->input->post('bangunan_long');
 	
-		$data = array(
+		$updated_data = array(
+			'bangunan_id' => $id,
 			'bangunan_nama' => $bangunan_nama,
 			'bangunan_lat' => $bangunan_lat,
 			'bangunan_long' => $bangunan_long
 		);
-		$where = array(
-			'bangunan_id' => $id
-		);
-		$this->m_data->update_data($where,$data,'bangunan');
+		// $where = array(
+		// 	'bangunan_id' => $id
+		//);
+		$this->m_data->update_data($updated_data, $this->input->post('bangunan_id'));
 		redirect('index.php/crud/index');
 	}
- 
+	// function update(){
+	// 	$id = $this->input->post('bangunan_id');
+	// 	$bangunan_nama = $this->input->post('bangunan_nama');
+	// 	$bangunan_lat = $this->input->post('bangunan_lat');
+	// 	$bangunan_long = $this->input->post('bangunan_long');
+
+		
+	// 	$data = array(
+	// 		'bangunan_nama' => $bangunan_nama,
+	// 		'bangunan_lat' => $bangunan_lat,
+	// 		'bangunan_long' => $bangunan_long
+	// 		);
+	// 	$where = array('bangunan_id' => $id);
+	// 	$this->m_data->update_data($where,$data,'bangunan');
+	// 	redirect('index.php/home');
+	// }
 }
