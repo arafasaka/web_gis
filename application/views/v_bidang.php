@@ -210,6 +210,12 @@ $(document).ready(function(){
 
  </div>
   <!--Normale contenuto di pagina-->
+  <!-- <form action=<?php echo base_url('index.php/bidang/action') ?> method="post" enctype="multipart/form-data">
+Pilih File Anda:
+<input type="file" name="myfile" />
+<input name="MAX_FILE_SIZE" type="hidden" id="MAX_FILE_SIZE" size="30000" />
+<input type="submit" value="Upload" />
+</form> -->
 
   <div class="container">
         <div class="table-wrapper">			
@@ -218,7 +224,7 @@ $(document).ready(function(){
                     <div class="col-sm-4">					
 					</div>
 					<div class="col-sm-4">
-						<h2 class="text-center">DATA DOKUMENTASI BIDANG</h2>
+						<h2 class="text-center">DATA  BIDANG</h2>
 					</div>
                     <div class="col-sm-4">
                         <div class="search-box">
@@ -232,7 +238,6 @@ $(document).ready(function(){
             </div>
             
             <button class="btn btn-primary btn-md" onclick="location.href='<?php echo base_url();?>index.php/bidang/tambah'">TAMBAH DETAIL BIDANG</button>
-            
             <a class="btn btn-danger" href="<?php echo base_url('index.php/bidang/print') ?>"> <i class="fa fa-print"></i> EXPORT</a>
             <!-- <a class="btn btn-warning" href="<?php echo base_url('index.php/crud/excel') ?>"> <i class="fa fa-print"></i> Export EXCEL </a>   -->
             <div class="form-group">
@@ -243,6 +248,7 @@ $(document).ready(function(){
                         <th>Nama Bidang <i class="fa fa-sort"></i></th>
                         <th>Bidang Keterangan</th>
                         <th>Bidang Gambar</th>
+                        <th>Gambar</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -257,7 +263,8 @@ $(document).ready(function(){
                         <td><?php echo $b->bidang_kode; ?></td>
                         <td><?php echo $b->bidang_nama; ?></td>
                         <td><?php echo $b->bidang_keterangan; ?></td>
-                        <td><?php echo $b->bidang_gambar; ?></td>
+                        <td><?php echo $b->bidang_gambar; ?></td>   
+                        <td><img src="<?php echo base_url(); ?>/assets/uploads/<?php echo $b->bidang_gambar; ?>" width="90" height="60"></td>
                         
                         <td>
                             <?php $a= '\'index.php/crud/hapus/' ?>

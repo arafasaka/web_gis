@@ -45,6 +45,43 @@ class dokumentasi extends CI_Controller{
 		$this->m_data->hapus_data_dokumentasi($where,'dokumentasi');
         redirect('index.php/dokumentasi/index');
     }
+    function print(){
+		$this->data['datas']=$this->m_data->showDataDokumentasi();
+        $this->load->view('v_print_tabel3',$this->data);
+    }
+    // public function edit($id){
+	// 	$where = array('dokumentasi_id' => $id);
+	// 	$data['dokumentasi']= $this->m_data->edit_data_dokumentasi($where,'dokumentasi')->result();
+	// 	//print_r($id	);
+	// 	$this->load->view('v_edit_dokumentasi', $data);
+	// }
+	// public function update(){
+	// 	$id = $this->input->post('dokumentasi_id');
+	// 	$bidang_kode = $this->input->post('bidang_kode');
+    //     $bidang_dokumentasi = $_FILES['bidang_dokumentasi'];
+    //     if($bidang_gambar=''){}else{
+    //         $config['upload_path'] = './assets/uploads';
+    //         $config['allowed_types'] = 'jpg|png|gif';
+
+    //         $this->load->library('upload',$config);
+    //         if(!$this->upload->do_upload('bidang_dokumentasi')){
+    //             echo "Upload gagal"; die();   
+    //         }else{
+    //             $bidang_gambar=$this->upload->data('file_name');
+    //         }
+    //     }
+        
+	// 	$updated_data = array(
+	// 		'dokumentasi_id' => $dokumentasi_id,
+	// 		'bidang_kode' => $bidang_kode,
+    //         'bidang_dokumentasi' => $bidang_dokumentasi
+	// 		);
+	// 	$this->m_data->update_data_dokumentasi($updated_data, $this->input->post('dokumentasi_id'));
+	// 	redirect('index.php/dokumentasi/index');
+    // }
+
+
+
 
     // public function edit($id){
 	// 	$where = array('bidang_kode' => $id);

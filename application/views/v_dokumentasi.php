@@ -233,7 +233,7 @@ $(document).ready(function(){
             
             <button class="btn btn-primary btn-md" onclick="location.href='<?php echo base_url();?>index.php/dokumentasi/tambah'">TAMBAH DOKUMENTASI BIDANG</button>
             
-            <a class="btn btn-danger" href="<?php echo base_url('index.php/bidang/print') ?>"> <i class="fa fa-print"></i> EXPORT</a>
+            <a class="btn btn-danger" href="<?php echo base_url('index.php/dokumentasi/print') ?>"> <i class="fa fa-print"></i> EXPORT</a>
             <!-- <a class="btn btn-warning" href="<?php echo base_url('index.php/crud/excel') ?>"> <i class="fa fa-print"></i> Export EXCEL </a>   -->
             <div class="form-group">
             <table class="table table-bordered">
@@ -242,6 +242,7 @@ $(document).ready(function(){
                         <th>#</th>
                         <th>Kode Bidang <i class="fa fa-sort"></i></th>
                         <th>Gambar Dokumentasi</th>
+                        <th>Gambar </th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -256,11 +257,11 @@ $(document).ready(function(){
                         <td><?php echo $b->dokumentasi_id; ?></td>
                         <td><?php echo $b->bidang_kode; ?></td>
                         <td><?php echo $b->dokumentasi_gambar; ?></td>
-                        
+                        <td><img src="<?php echo base_url(); ?>/assets/uploads/<?php echo $b->dokumentasi_gambar; ?>" width="90" height="60"></td>
                         <td>
                             <?php $a= '\'index.php/crud/hapus/' ?>
 							
-                            <a href='<?=base_url().'index.php/dokumentasi/edit/' . $b->bidang_kode?>'   class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <!-- <a href='<?=base_url().'index.php/dokumentasi/edit/' . $b->bidang_kode?>'   class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a> -->
                             <a href='<?=base_url().'index.php/dokumentasi/hapus/' . $b->dokumentasi_id?>' class='delete' title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                         </td>
                             </tr>

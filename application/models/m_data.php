@@ -40,9 +40,9 @@ class m_data extends CI_Model{
 	public function edit_data_bidang($where,$table){		
 		return $this->db->get_where($table,$where);
 	}
-	function detail_data($id = null){
-		$query = $this->db->get_where('bidang', array('kode_bidang' => $id))->row();
-		return $query;
+	public function update_data_bidang($updated_data, $id){
+		$this->db->where('bidang_kode', $id); 
+		$this->db->update('bidang', $updated_data);
 	}
 
 	//DOKUMENTASI
@@ -56,5 +56,12 @@ class m_data extends CI_Model{
 	}
 	function input_data_dokumentasi($data,$table){
 		$this->db->insert($table,$data);
+	}
+	public function edit_data_dokumentasi($where,$table){		
+		return $this->db->get_where($table,$where);
+	}
+	public function update_data_dokumentasi($updated_data, $id){
+		$this->db->where('dokumentasi_id', $id); 
+		$this->db->update('dokumentasi', $updated_data);
 	}
 }

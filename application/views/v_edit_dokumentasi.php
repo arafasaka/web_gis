@@ -84,26 +84,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </style>
 </head>
 <body>
-<?php foreach($bidang as $b){ ?>   	
+<?php foreach($dokumentasi as $b){ ?>   	
     <div class="signup-form">
-	<!-- <form action="<?php echo base_url(). 'index.php/bidang/update'; ?>" method="post"> -->
-	<?php echo form_open_multipart('index.php/bidang/update'); ?>
+	
+	<?php echo form_open_multipart('index.php/dokumentasi/update'); ?>
 		<h2>EDIT DATA BIDANG</h2>
 		<p>PASTIKAN DATA BENAR</p>
 		<hr>
         <div class="form-group">
-        	<input type="text" class="form-control" name="bidang_kode" value="<?php echo $b->bidang_kode ?>" placeholder="Kode Bidang" required="required">
+        	<input type="text" class="form-control" name="dokumentasi_id" value="<?php echo $b->dokumentasi_id ?>" placeholder="ID Dokumentasi" required="required">
         </div>
         <div class="form-group">
-        	<input type="text" class="form-control" name="bidang_nama" value="<?php echo $b->bidang_nama ?>" placeholder="Nama Bangunan" required="required">
+        	<input type="text" class="form-control" name="bidang_kode" value="<?php echo $b->bidang_kode ?>" placeholder="Kode Bidang" required="required">
         </div>
-		<div class="form-group">
-            <textarea  class="form-control" name="bidang_keterangan" <?php echo $b->bidang_keterangan ?> placeholder="Keterangan Bidang" required="required"></textarea>
-        </div>
-		<div class="form-group">
-            <input type="file" class="form-control" name="bidang_gambar" value="<?php echo $b->bidang_gambar ?>"  placeholder="Gambar" required="required">
-        </div>
-		<center><td><img src="<?php echo base_url(); ?>/assets/uploads/<?php echo $b->bidang_gambar; ?>" width="90" height="60"></td></center>
+		<center><td><img src="<?php echo base_url(); ?>/assets/uploads/<?php echo $b->dokumentasi_gambar; ?>" width="90" height="60"></td></center>
 		<br>
 		<div class="form-group">
             <button type="submit" class="btn btn-primary btn-block btn-lg">MASUKAN DATA</button>

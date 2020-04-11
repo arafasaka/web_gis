@@ -10,6 +10,7 @@
         <th>Nama Bidang</th>
        <th>Keterangan Bidang</th>
        <th>Gambar Bidang</th>
+       <th>Gambar</th>
      </tr>
      <?php 
     foreach($datas as $b): ?>
@@ -19,6 +20,7 @@
       <td><?php echo $b->bidang_nama; ?></td>
       <td><?php echo $b->bidang_keterangan; ?></td>
       <td><?php echo $b->bidang_gambar; ?></td>
+      <td><img src="<?php echo base_url(); ?>/assets/uploads/<?php echo $b->bidang_gambar; ?>" width="90" height="60"></td>
       <td>
     </tr>
 <?php endforeach; ?>
